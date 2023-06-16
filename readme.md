@@ -1,10 +1,12 @@
 <h1>Cypto Website</h1>
 
-![My Image](./images/1.png)
-![My Image](./images/2.png)
+
+![My Image](./images/5.png) <br />
+![My Image](./images/4.png)  <br/>
+![My Image](./images/1.png)  <br/>
 ![My Image](./images/3.png)
-![My Image](./images/4.png)
-![My Image](./images/5.png)
+
+
 
 Contributing
 
