@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>Cryptocurrency Trading Dashboard</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">CryptoTrade</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Transactions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Settings</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container-fluid">
+    <h1 class="mt-4">Dashboard</h1>
+    <hr>
+
+    <div class="row">
+      <!-- Portfolio Summary -->
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="card-title">Portfolio Summary</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Total Value: $50,000</p>
+            <p class="card-text">Total Profit/Loss: $5,000 (10%)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Market Data -->
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="card-title">Market Data</h5>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <h6>Bitcoin (BTC)</h6>
+                <p>Price: $40,000</p>
+                <p>24h Change: +5%</p>
+              </div>
+              <div class="col-md-4">
+                <h6>Ethereum (ETH)</h6>
+                <p>Price: $2,500</p>
+                <p>24h Change: +3%</p>
+              </div>
+              <div class="col-md-4">
+                <h6>Litecoin (LTC)</h6>
+                <p>Price: $200</p>
+                <p>24h Change: +2%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trading Performance -->
+    <div class="card mb-4">
+      <div class="card-header">
+        <h5 class="card-title">Trading Performance</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <h6>Total Trades</h6>
+            <p>25</p>
+          </div>
+          <div class="col-md-4">
+            <h6>Win Rate</h6>
+            <p>80%</p>
+          </div>
+          <div class="col-md-4">
+            <h6>Profit/Loss</h6>
+            <p>$10,000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Transactions -->
+    <h2 class="mt-4">Recent Transactions</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Cryptocurrency</th>
+          <th scope="col">Type</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2023-06-10</td>
+          <td>Bitcoin (BTC)</td>
+          <td>Buy</td>
+          <td>0.5 BTC</td>
+          <td>$40,000</td>
+        </tr>
+        <tr>
+          <td>2023-06-08</td>
+          <td>Ethereum (ETH)</td>
+          <td>Sell</td>
+          <td>2 ETH</td>
+          <td>$2,500</td>
+        </tr>
+        <tr>
+          <td>2023-06-06</td>
+          <td>Litecoin (LTC)</td>
+          <td>Buy</td>
+          <td>5 LTC</td>
+          <td>$200</td>
+        </tr>
+        <tr>
+          <td>2023-06-04</td>
+          <td>Ripple (XRP)</td>
+          <td>Buy</td>
+          <td>100 XRP</td>
+          <td>$1.50</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Footer -->
+    <footer class="mt-5 mb-4 text-center">
+      <p>&copy; 2023 CryptoTrade. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

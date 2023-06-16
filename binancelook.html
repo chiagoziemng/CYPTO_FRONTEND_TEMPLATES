@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cryptocurrency Trading Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+  <style>
+    /* Custom styles */
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .navbar {
+      background-color: #1a1a1a;
+    }
+
+    .navbar .form-control {
+      border-radius: 20px;
+    }
+
+    .navbar .btn-outline-success {
+      border-radius: 20px;
+      margin-left: 10px;
+    }
+
+    .sidebar {
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+
+    .sidebar h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #212529;
+    }
+
+    .sidebar .nav-link {
+      padding: 10px;
+      font-size: 14px;
+      color: #212529;
+    }
+
+    .dashboard-content {
+      margin-top: 30px;
+      padding: 20px;
+    }
+
+    .card {
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #212529;
+    }
+
+    .card-text {
+      font-size: 16px;
+      color: #212529;
+    }
+
+    .table {
+      font-size: 14px;
+    }
+
+    .table th {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #212529;
+    }
+
+    .table td {
+      vertical-align: middle;
+    }
+
+    .list-group-item {
+      background-color: #f8f9fa;
+      border-color: transparent;
+      border-radius: 5px;
+      color: #212529;
+    }
+
+    .list-group-item:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    #chartContainer {
+      height: 300px;
+      border-radius: 10px;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 576px) {
+      .navbar .navbar-brand {
+        font-size: 20px;
+      }
+
+      .navbar .form-control {
+        width: 150px;
+      }
+
+      .navbar .btn-outline-success {
+        font-size: 12px;
+        padding: 5px 10px;
+      }
+
+      .sidebar {
+        padding: 10px;
+      }
+
+      .sidebar h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .sidebar .nav-link {
+        padding: 5px;
+        font-size: 12px;
+      }
+
+      .dashboard-content {
+        margin-top: 20px;
+        padding: 10px;
+        .card-title {
+          font-size: 20px;
+          margin-bottom: 15px;
+        }
+
+        .card-text {
+          font-size: 14px;
+        }
+
+        .table {
+          font-size: 12px;
+        }
+
+        .table th {
+          font-size: 10px;
+        }
+
+        .table td {
+          padding: 5px;
+        }
+
+        .list-group-item {
+          font-size: 12px;
+        }
+
+        #chartContainer {
+          height: 200px;
+        }
+      }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Cryptocurrency Dashboard</a>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="sidebar">
+          <h3>Menu</h3>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Accounts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Transactions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="dashboard-content">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Account Balance</h5>
+                  <p class="card-text">$10,000</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Bitcoin Balance</h5>
+                  <p class="card-text">0.5432 BTC</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Ethereum Balance</h5>
+                  <p class="card-text">2.3456 ETH</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Recent Transactions</h5>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2023-06-12</td>
+                        <td>Buy</td>
+                        <td>0.5432 BTC</td>
+                      </tr>
+                      <tr>
+                        <td>2023-06-11</td>
+                        <td>Sell</td>
+                        <td>0.1234 BTC</td>
+                      </tr>
+                      <tr>
+                        <td>2023-06-10</td>
+                        <td>Buy</td>
+                        <td>2.3456 ETH</td>
+                      </tr>
+                      <tr>
+                        <td>2023-06-09</td>
+                        <td>Sell</td>
+                        <td>1.2345 ETH</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Price Chart</h5>
+                  <div id="chartContainer"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Asset Overview</h5>
+                  <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Bitcoin
+                      <span class="badge bg-primary">0.5432 BTC</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Ethereum
+                      <span class="badge bg-primary">2.3456 ETH</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Litecoin
+                      <span class="badge bg-primary">10.9876 LTC</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.28.0/dist/apexcharts.min.js"></script>
+  <script>
+    // JavaScript code for the price chart
+    var options = {
+      series: [{
+        name: 'Bitcoin',
+        data: [50000, 52000, 53000, 54000, 55000, 56000, 57000, 58000, 59000, 60000]
+      }, {
+        name: 'Ethereum',
+        data: [3000, 3100, 3200, 3300, 3400, 3500, 3600, 3700, 3800, 3900]
+      }],
+      chart: {
+        type: 'line',
+        height: 350,
+        zoom: {
+          enabled: false
+        },
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        width: [3, 3],
+        curve: 'straight',
+        dashArray: [0, 5]
+      },
+      title: {
+        text: 'Price Chart',
+        align: 'left'
+      },
+      legend: {
+        tooltipHoverFormatter: function (val, opts) {
+          return val + ' - <strong>' + opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex] + '</strong>'
+        }
+      },
+      markers: {
+        size: 0,
+        hover: {
+          sizeOffset: 6
+        }
+      },
+      xaxis: {
+        categories: ['2023-06-05', '2023-06-06', '2023-06-07', '2023-06-08', '2023-06-09', '2023-06-10', '2023-06-11', '2023-06-12', '2023-06-13', '2023-06-14'],
+      },
+      tooltip: {
+        y: [{
+          title: {
+            formatter: function (val) {
+              return val + " BTC"
+            }
+          }
+        }, {
+          title: {
+            formatter: function (val) {
+              return val + " ETH"
+            }
+          }
+        }]
+      },
+      grid: {
+        borderColor: '#f1f1f1',
+      }
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chartContainer"), options);
+    chart.render();
+  </script>
+</body>
+
+</html>
+

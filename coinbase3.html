@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coinbase</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+
+  <style>
+    /* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Header Styles */
+.header-section {
+  background-color: #2e384d;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.header-section h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.header-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.header-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #1dbf73;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* Features Section */
+.features-section {
+  padding: 100px 0;
+  background-color: #f7f7f7;
+}
+
+.feature-icon {
+  font-size: 48px;
+  color: #2e384d;
+  margin-bottom: 20px;
+}
+
+.feature-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.feature-description {
+  font-size: 16px;
+}
+
+/* Charts Section */
+.charts-section {
+  padding: 100px 0;
+  background-color: #fff;
+}
+
+.chart-card {
+  background-color: #f2f2f2;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+
+.chart-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.chart {
+  height: 400px;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 100px 0;
+  background-color: #2e384d;
+  color: #fff;
+}
+
+.cta-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.cta-description {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #1dbf73;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* Footer */
+.footer-section {
+  padding: 50px 0;
+  background-color: #2e384d;
+  color: #fff;
+}
+
+.footer-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-description {
+  font-size: 16px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-social-links li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-social-links a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">Coinbase</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Buy/Sell</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Trade</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Prices</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Learn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Support</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-light" href="#">Sign In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-4">Buy, Sell, and Trade Cryptocurrency</h1>
+          <p class="lead">Join millions of users on Coinbase to manage and grow your digital assets.</p>
+          <button class="btn btn-primary cta-button">Get Started</button>
+        </div>
+        <div class="col-lg-6">
+          <img src="hero-image.png" alt="Hero Image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <i class="feature-icon fas fa-wallet"></i>
+          <h2 class="feature-title">Secure Wallets</h2>
+          <p class="feature-description">Store your funds in a secure offline environment.</p>
+        </div>
+        <div class="col-lg-4">
+          <i class="feature-icon fas fa-chart-line"></i>
+          <h2 class="feature-title">Real-Time Prices</h2>
+          <p class="feature-description">Get the latest prices and market trends in real-time.</p>
+        </div>
+        <div class="col-lg-4">
+          <i class="feature-icon fas fa-user-friends"></i>
+          <h2 class="feature-title">Community</h2>
+          <p class="feature-description">Connect with a global community of cryptocurrency enthusiasts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Charts Section -->
+  <section class="charts-section">
+    <div class="container">
+      <h2 class="section-title">Market Charts</h2>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="chart-card">
+            <h3 class="chart-title">Bitcoin (BTC)</h3>
+            <div id="btc-chart" class="chart"></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="chart-card">
+            <h3 class="chart-title">Ethereum (ETH)</h3>
+            <div id="eth-chart" class="chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2 class="cta-title">Start Your Cryptocurrency Journey Today</h2>
+          <p class="cta-description">Create an account on Coinbase and explore the world of digital currencies.</p>
+        </div>
+        <div class="col-lg-6">
+          <button class="btn btn-primary cta-button">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h3 class="footer-title">About Coinbase</h3>
+          <p class="footer-description">Coinbase is a secure platform that makes it easy to buy, sell, and store cryptocurrency.</p>
+        </div>
+        <div class="col-lg-4">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Buy/Sell</a></li>
+            <li><a href="#">Trade</a></li>
+            <li><a href="#">Prices</a></li>
+            <li><a href="#">Learn</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h3 class="footer-title">Connect</h3>
+          <ul class="footer-social-links">
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

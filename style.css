@@ -1,0 +1,49 @@
+
+.sidebar {
+  background-color: #20232a;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.sidebar h3 {
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.sidebar .nav-link {
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #ffffff;
+  color: #20232a;
+}
+
+.dashboard-content {
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.market-overview {
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.cryptocurrency {
+  font-weight: bold;
+}
+
+.price {
+  color: green;
+}
+
+.metric-name {
+  font-weight: bold;
+}
+
+.metric-value {
+  color: blue;
+}
+

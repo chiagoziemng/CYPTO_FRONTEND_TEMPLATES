@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cryptocurrency Trading Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+
+  <style>
+
+
+    /* Custom styles */
+
+.dashboard-content {
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.market-overview {
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.cryptocurrency {
+  font-weight: bold;
+}
+
+.price {
+  color: green;
+}
+
+.metric-name {
+  font-weight: bold;
+}
+
+.metric-value {
+  color: blue;
+}
+
+/* Additional creative styling */
+
+.card {
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.card-text {
+  font-size: 16px;
+}
+
+.table {
+  font-size: 14px;
+}
+
+.table th {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.list-group-item {
+  background-color: #f8f9fa;
+  border-color: transparent;
+  border-radius: 5px;
+}
+
+.list-group-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+#chartContainer {
+  height: 300px;
+  border-radius: 10px;
+}
+
+/* Responsive styles */
+
+@media (max-width: 576px) {
+  .sidebar {
+    padding: 10px;
+  }
+
+  .sidebar h3 {
+    margin-bottom: 15px;
+  }
+
+  .sidebar .nav-link {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .dashboard-content,
+  .market-overview {
+    margin-top: 30px;
+    padding: 10px;
+  }
+
+  .card-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .card-text {
+    font-size: 14px;
+  }
+
+  .table {
+    font-size: 12px;
+  }
+
+  #chartContainer {
+    height: 200px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container">
+        <span class="navbar-brand mb-0 h1">Kypto X2 PRO</span>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container bg-warning">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="dashboard.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="cryptocurrencies.html">Cryptocurrencies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="transactions.html">Transactions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="admin.html">Admin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="user.html">User</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="setting.html">Settings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark "href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="buyandsell.html">Buy/Sell</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="marketdata.html">Market Data</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="orderbook.html">Order Book</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="tradinghistory.html">Trading History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="wallet.html">Wallet</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="kyc.html">KYC</a>
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="row mt-4">
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title">Welcome to the Dashboard</h1>
+            <p class="card-text">This is your personalized dashboard where you can manage your cryptocurrency trading activities.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Account Balance</h2>
+            <p class="card-text">Your current account balance is $10,000.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Market Overview</h2>
+            <div id="chartContainer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- Market Overview -->
+    <div class="row mt-4 market-overview">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Market Trends</h3>
+            <p class="card-text">Display market trends, price movements, or any other relevant information here.</p>
+            <ul class="list-group">
+              <li class="list-group-item" id="bitcoinTrend">Bitcoin (BTC) - </li>
+              <li class="list-group-item" id="ethereumTrend">Ethereum (ETH) - </li>
+              <li class="list-group-item" id="litecoinTrend">Litecoin (LTC) - </li>
+            </ul>            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Top Cryptocurrencies</h3>
+            <ul class="list-group top-cryptocurrencies" id="topCryptocurrencies">
+              <!-- Dynamic content will be inserted here -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Key Metrics</h3>
+            <ul class="list-group key-metrics" id="keyMetrics">
+              <!-- Dynamic content will be inserted here -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Recent Transactions</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Cryptocurrency</th>
+                  <th>Type</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2023-06-01</td>
+                  <td>Bitcoin (BTC)</td>
+                  <td>Buy</td>
+                  <td>0.05 BTC</td>
+                  <td>Completed</td>
+                </tr>
+                <tr>
+                  <td>2023-05-28</td>
+                  <td>Ethereum (ETH)</td>
+                  <td>Sell</td>
+                  <td>2 ETH</td>
+                  <td>Completed</td>
+                </tr>
+                <tr>
+                  <td>2023-05-25</td>
+                  <td>Litecoin (LTC)</td>
+                  <td>Buy</td>
+                  <td>0.1 LTC</td>
+                  <td>Pending</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="bg-dark text-white mt-4 py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h4>About Us</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt turpis eget felis aliquam, sed aliquam elit varius.</p>
+        </div>
+        <div class="col-lg-3">
+          <h4>Links</h4>
+          <ul class="list-unstyled">
+            <li><a class="text-white" href="#">Home</a></li>
+            <li><a class="text-white" href="#">About</a></li>
+            <li><a class="text-white" href="#">Services</a></li>
+            <li><a class="text-white" href="#">Contact</a></li>
+            <li>
+              <a class="text-white" href="term.html">Terms of Service</a>
+            </li>
+            <li >
+              <a class="text-white" href="support.html">Support/Help</a>
+            </li>
+            <li >
+              <a class="text-white" href="privacy.html">Privacy Policy</a>
+            </li>
+            <li >
+              <a class="text-white" href="securitysettings.html">Security Settings</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h4>Contact Us</h4>
+          <p>123 Street, City, State</p>
+          <p>Email: info@example.com</p>
+          <p>Phone: 123-456-7890</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script>
+    $(document).ready(function() {
+      // Fetch trend data
+      $.getJSON("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,litecoin", function(data) {
+        var trendData = data;
+    
+        // Update trend data
+        trendData.forEach(function(cryptocurrency) {
+          var id = cryptocurrency.id;
+          var symbol = cryptocurrency.symbol;
+          var priceChangePercentage = cryptocurrency.price_change_percentage_24h;
+    
+          var trendText = symbol + " (" + id.toUpperCase() + ") - ";
+          if (priceChangePercentage > 0) {
+            trendText += "Up " + priceChangePercentage.toFixed(2) + "%";
+          } else if (priceChangePercentage < 0) {
+            trendText += "Down " + Math.abs(priceChangePercentage).toFixed(2) + "%";
+          } else {
+            trendText += "No Change";
+          }
+    
+          $("#" + id + "Trend").text(trendText);
+        });
+      });
+    });
+    
+    
+  </script>
+  <script>
+    $(document).ready(function() {
+      // Fetch top cryptocurrencies data
+      $.getJSON("https://api.binance.com/api/v3/ticker/24hr", function(data) {
+        var topCryptocurrencies = $("#topCryptocurrencies");
+        topCryptocurrencies.empty();
+
+        // Display top 5 cryptocurrencies based on trading volume
+        for (var i = 0; i < 5; i++) {
+          var cryptocurrency = data[i];
+          var symbol = cryptocurrency.symbol;
+          var price = cryptocurrency.lastPrice;
+
+          // Styling for top cryptocurrencies
+        var listItem = $("<li>").addClass("list-group-item").html(
+          '<span class="cryptocurrency">' + symbol + '</span>' +
+          '<span class="price">' + price + '</span>'
+        );
+
+          topCryptocurrencies.append(listItem);
+        }
+      });
+
+      // Fetch key metrics data
+      $.getJSON("https://api.binance.com/api/v3/ticker/price", function(data) {
+        var keyMetrics = $("#keyMetrics");
+        keyMetrics.empty();
+
+
+         // Define the top ten coins
+          var topCoins = [
+          { symbol: "BTCUSDT", name: "Bitcoin (BTC)" },
+          { symbol: "ETHUSDT", name: "Ethereum (ETH)" },
+          { symbol: "BNBUSDT", name: "Binance Coin (BNB)" },
+          { symbol: "XRPUSDT", name: "XRP (XRP)" },
+          { symbol: "DOGEUSDT", name: "Dogecoin (DOGE)" },
+         
+        ];
+
+            // Display key metrics for each coin
+      topCoins.forEach(function(coin) {
+      var coinMetrics = data.find(function(metric) {
+        return metric.symbol === coin.symbol;
+      });
+      var coinPrice = coinMetrics.price;
+
+      // Styling for key metrics
+      var listItem = $("<li>").addClass("list-group-item").html(
+        '<span class="metric-name">' + coin.name + ' Price:</span>' +
+        '<span class="metric-value">' + coinPrice + '</span>'
+      );
+
+        keyMetrics.append(listItem);
+      });
+    });
+  });
+  </script>
+
+
+
+<!--Market Overview
+ { symbol: "ADAUSDT", name: "Cardano (ADA)" },
+          { symbol: "DOTUSDT", name: "Polkadot (DOT)" },
+          { symbol: "UNIUSDT", name: "Uniswap (UNI)" },
+          { symbol: "LTCUSDT", name: "Litecoin (LTC)" },
+          { symbol: "LINKUSDT", name: "Chainlink (LINK)" }
+-->
+  <script>
+    // Fetch market data from CoinGecko API
+    $.ajax({
+      url: 'https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7&interval=daily',
+      method: 'GET',
+      success: function(response) {
+        var prices = response.prices;
+        var timestamps = prices.map(item => item[0]);
+        var values = prices.map(item => item[1]);
+
+        // Prepare data for chart
+        var series = [];
+        for (var i = 0; i < timestamps.length; i++) {
+          series.push([timestamps[i], values[i]]);
+        }
+
+        // Configure the chart
+        var options = {
+          chart: {
+            type: 'area',
+            height: 400
+          },
+          series: [{
+            name: 'Price',
+            data: series
+          }],
+          xaxis: {
+            type: 'datetime'
+          },
+          yaxis: {
+            labels: {
+              formatter: function(value) {
+                return '$' + value.toFixed(2);
+              }
+            }
+          }
+        };
+
+        // Render the chart
+        var chart = new ApexCharts(document.querySelector('#chartContainer'), options);
+        chart.render();
+      },
+      error: function(error) {
+        console.log('Error fetching market data:', error);
+      }
+    });
+  </script>
+</body>
+
+</html>
